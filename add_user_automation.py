@@ -40,16 +40,16 @@ with open('roster_canvas_automate_template.csv') as file:
 driver = webdriver.Chrome("C:\Program Files\chromedriver.exe")
 
 # Navigating to users page..Will ask to log in first
-driver.get("https://canvas.instructure.com/courses/1508979/users#")
+driver.get("https://canvas.instructure.com/courses/<course_id_here>/users#")
 
 username_element = driver.find_element_by_name("pseudonym_session[unique_id]")
 password_element = driver.find_element_by_name("pseudonym_session[password]")
 
 username_element.clear()
-username_element.send_keys('aparappi@iu.edu') #Provide login details
+username_element.send_keys('<your_email_here>') #Provide login details
 
 password_element.clear()
-password_element.send_keys('xxxxxx') # This is not secure! Must read from an .env file later..Done for quick delivery
+password_element.send_keys('<your_pass_here>') # This is not secure! Must read from an .env file later..Done for quick delivery
 
 password_element.send_keys(Keys.RETURN) #Press enter
 
